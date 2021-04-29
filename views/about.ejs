@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<%-include('navBar.ejs')%>
+<style>
+  body {
+    background-color: aliceblue;
+    margin-top: 20px;
+  }
+</style>
+
+<html>
+  <head>
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <%if(hasOwnProperty('metaData')){ var i=1; metaData.forEach((data)=>{%>
+    <h6>Welcome Mr.</h6>
+    <h6><%=data.aname%></h6>
+    <%i++})}%>
+  </body>
+</html>

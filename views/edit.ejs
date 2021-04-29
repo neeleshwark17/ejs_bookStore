@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<%-include('navBar.ejs')%>
+<style>
+  body {
+    background-color: aliceblue;
+    margin-top: 20px;
+  }
+</style>
+<html>
+  <head>
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="col-lg-5"></div>
+    </div>
+
+    <div class="container-fluid" style="margin-top: 5%;">
+        <div class="row">
+          <div class="col-lg-3"></div>
+          <div class="col-lg-8">
+            <form action="/insert" method="POST" enctype="multipart/form-data">
+                <%if(results.length!=0){var i=1; results.forEach((data)=>{%>
+
+              <div class="form-group row">
+                <label class="col-form-label col-lg-2">Book Name &nbsp;&nbsp;</label>
+                <input class="form-control col-lg-6" type="text" placeholder="Book Name" name="bookName" value="<%=data.bookName%>">
+              </div>  
+              </br>
+          
+              <div class="form-group row">
+                <label class="col-form-label col-lg-2">Book Author &nbsp;&nbsp;</label>
+                <input class="form-control col-lg-6" type="text" placeholder="Book Author" name="bookAuthor" value="<%=data.bookAuthor%>">
+              </div>  
+                </br>
+          
+                <div class="form-group row">
+                  <label class="col-form-label col-lg-2">Book Image &nbsp;&nbsp;</label>
+                  <input  type="file" name="imageName">
+                </div>  
+                </br>
+    
+                <div class="form-group row">
+                  <label class="col-form-label col-lg-2">Book Price &nbsp;&nbsp;</label>
+                  <input class="form-control col-lg-6" type="number" placeholder="Book Price" name="bookPrice" value="<%=data.bookPrice%>">
+                </div>  
+                </br>
+                <%i++})}%>
+
+                <input type="submit" class="btn btn-primary">
+              </form>
+          </div>
+        </div>
+      </div>
+  </body>
+</html>
+
+

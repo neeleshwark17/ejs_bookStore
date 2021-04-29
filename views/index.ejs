@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<%-include('navBar.ejs')%>
+<style>
+  body {
+    background-color: aliceblue;
+    margin-top: 20px;
+  }
+</style>
+<html>
+  <head>
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <div class="row">
+      <div class="col-lg-5"></div>
+    </div>
+
+    <div class="container">
+      <table border="1" class="table table-striped">
+        <thead>
+          <tr>
+            <th>Book ID</th>
+            <th>Book Name</th>
+            <th>Book Author</th>
+            <th>Book Image</th>
+            <th>Book Price</th>
+            <th>Issue Book</th>
+            <!-- <th>Delete</th>
+            <th>Edit</th> -->
+          </tr>
+        </thead>
+        <tbody>
+          <%if(results.length!=0){ var i=1; results.forEach((data)=>{ %>
+          <tr>
+            <td><%=data.bookId%></td>
+            <td><%=data.bookName%></td>
+            <td><%=data.bookAuthor%></td>
+            <td>
+              <img
+                src="<%=data.bookImage%>"
+                alt="img"
+                height="50px"
+                width="50px"
+              />
+            </td>
+            <td><%=data.bookPrice%></td>
+            <!-- <td>
+              <a href="http://localhost:3000/delete/<%=data.bookId%>">Delete</a>
+            </td>
+            <td>
+              <a href="http://localhost:3000/edit/<%=data.bookId%>">Edit</a>
+            </td> -->
+            <td>
+              <a href="http://localhost:3000/getBook/<%=data.bookId%>"
+                >Get Book</a
+              >
+            </td>
+          </tr>
+          <%i++})%> <%}else {%>
+          <tr>
+            <td>Data not found</td>
+          </tr>
+          <%}%>
+        </tbody>
+      </table>
+    </div>
+  </body>
+</html>

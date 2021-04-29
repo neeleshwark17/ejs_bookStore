@@ -1,0 +1,18 @@
+<div>
+	<form action="#" method="POST" >
+	{{#each results}}
+		Book Id<input name="bookId" value="{{bookId}}" readonly/>
+		</br>
+		Book Name<input type="text" name="bookName" value="{{bookName}}"/>
+		</br>
+		Book Price<input type="number" name="bookPrice" value="{{bookPrice}}"/>
+		</br>
+		Book Author<input type="text" name="bookAuthor" value="{{bookAuthor}}"/>
+		</br>
+		Book Image<input type="text" name="bookImage" value="{{bookImage}}"/>
+		</br>
+		{{/each}}
+		<input type="submit" value="Update" />
+	</form>
+</div>
+<button><a href="#">Home</a></button>

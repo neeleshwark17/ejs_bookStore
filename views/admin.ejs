@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<%-include('navBar.ejs')%>
+<style>
+  body {
+    background-color: aliceblue;
+    margin-top: 20px;
+  }
+</style>
+
+<html>
+  <head>
+    <title><%=title%></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-4 col-md-2 col-sm-2"></div>
+        <div class="col-lg-8 col-md-6 col-sm-6">
+          <div class="row" style="height: 70%"></div>
+          <h6>Log into your Admin account!</h6>
+          <div style="margin-top: 2%; margin-bottom: 2%">
+            ______________________________
+          </div>
+          <form action="/logins" method="POST">
+            <input
+              placeholder="Email"
+              class="form-control col-lg-5"
+              type="email"
+              name="aemail"
+              id="aemail"
+            />
+            <br />
+
+            <input
+              placeholder="Password"
+              class="form-control col-lg-5"
+              type="password"
+              name="apass"
+              id="apass"
+            />
+            <br />
+
+            <input
+              type="submit"
+              value="Login"
+              class="btn btn-primary col-lg-5"
+            />
+          </form>
+          <div style="margin-top: 2%;margin-bottom: 2%;">
+            <%if(hasOwnProperty('msg')){%>
+            <h6><%=msg%></h6>
+            <%}%>
+          </div>
+          <div style="margin-top: 2%">
+            <a href="#">Forgot your password</a>
+          </div>
+          
+        </div>
+      </div>
+    </body>
+    </div>
+
+    <!-- /////////////////////form end -->
+
+    
+</html>
